@@ -13,9 +13,9 @@ Dengan ini:
 
 ## 🏗️ Struktur Kelas (Class Diagram) Singleton Pattern
 ![classSingleton](https://github.com/user-attachments/assets/71e4941a-155a-474e-902e-39da376273d2)
-- 🔹 `PendataanPenjualan` → Singleton yang menyimpan semua data handphone yang dijual.
-- 🔹 `Handphone` → Superclass dengan atribut umum.
-- 🔹 `iPhone`, `Samsung`, `Xiaomi` → Subclass dengan atribut khusus.
+- 🔹 `PendataanPenjualan` → Singleton yang menyimpan semua data handphone yang terjual.
+- 🔹 `Handphone` → Superclass dengan atribut umum untuk membuat objek handphone.
+- 🔹 `iPhone`, `Samsung`, `Xiaomi` → Subclass Handphone dengan atribut khusus.
 
 ## Use Case Diagram
 ![use case](https://github.com/user-attachments/assets/4b4efc06-60a4-4a4a-8573-23f2dfae0e86)
@@ -104,7 +104,7 @@ Mediator Pattern adalah pola desain yang digunakan untuk mengelola komunikasi an
 ## 🏗️ Struktur Kelas (Class Diagram) Mediator Pattern
 ![mediatorClass](https://github.com/user-attachments/assets/eb94d72b-ec89-4226-96c7-d1cd3a907f6d)
 
-- 🔹 `Mediator` (Interface): Mendefinisikan metode tambah_penjualan() dan tampilkan_penjualan() yang harus diimplementasikan oleh mediator konkret.
+- 🔹 `Mediator` (Interface): Mendefinisikan metode tambah_penjualan() dan tampilkan_penjualan() yang harus diimplementasikan setiap mediator konkret.
 
 - 🔹 `TokoMediator` (Concrete Mediator): Mengelola daftar handphone yang terjual dan bertanggung jawab untuk menampilkan data penjualan berdasarkan tanggal.
 
@@ -132,3 +132,12 @@ Mediator Pattern adalah pola desain yang digunakan untuk mengelola komunikasi an
 10.  Total penjualan dihitung berdasarkan harga dan jumlah unit.
 11.  Data dikembalikan ke Main Program untuk ditampilkan.
 12.  Main Program menampilkan daftar penjualan dan total penjualan kepada admin.
+
+## CLI Apps
+### Inputan Admin:
+![input](https://github.com/user-attachments/assets/9db8164f-ac71-4da6-8e05-3fb50153b670)
+
+### Hasil:
+![hasil](https://github.com/user-attachments/assets/00d9f7c9-604d-4e38-a0eb-cfcfe0f5d091)
+
+Meskipun kita menggunakan design pattern yang berbeda seperti Singleton Pattern, Facade Pattern, atau Mediator Pattern, hasil akhir dari program saat dijalankan akan tetap sama. Hal ini terjadi karena setiap design pattern hanya mengatur bagaimana komponen dalam sistem berinteraksi, bukan mengubah logika bisnis utama dari aplikasi
