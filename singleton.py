@@ -122,17 +122,19 @@ if __name__ == "__main__":
         merk = input("Masukkan jenis handphone (iPhone/Samsung/Xiaomi) atau 'done' untuk selesai: ").lower()
         if merk == "done":
             break
-
-        model, harga, jumlah, warna, memori_internal = input_user()
+ 
         if merk == "iphone":
+            model, harga, jumlah, warna, memori_internal = input_user()
             ios_version = float(input("Versi iOS: "))
             face_id = input("Mendukung Face ID? (y/n): ").lower() == 'y'
             data_penjualan.tambah_hp(iPhone(model, tanggal_jual, harga, jumlah, warna, memori_internal, ios_version, face_id))
         elif merk == "samsung":
+            model, harga, jumlah, warna, memori_internal = input_user()
             oneUI_version = float(input("Versi One UI: "))
             s_pen = input("Mendukung S-Pen? (y/n): ").lower() == 'y'
             data_penjualan.tambah_hp(Samsung(model, tanggal_jual, harga, jumlah, warna, memori_internal, oneUI_version, s_pen))
         elif merk == "xiaomi":
+            model, harga, jumlah, warna, memori_internal = input_user()
             miUI_version = float(input("Versi MIUI: "))
             watt_fastCharge = int(input("Fast Charging (Watt): "))
             data_penjualan.tambah_hp(Xiaomi(model, tanggal_jual, harga, jumlah, warna, memori_internal, miUI_version, watt_fastCharge))
