@@ -63,7 +63,8 @@ Dengan menggunakan Facade Pattern:
 -  Kode menjadi lebih terstruktur dan mudah dipahami.
 
 ## 🏗️ Struktur Kelas (Class Diagram) Facade Pattern
-![facadeClass](https://github.com/user-attachments/assets/2fa5e5bc-edb9-406d-9e74-04a8f893b683)
+![image](https://github.com/user-attachments/assets/a692c3f6-0cee-4ba5-b14e-ad21d106ce59)
+
 - 🔹 Facade Class `Manajemen_Penjualan`
 ➜ Bertindak sebagai penghubung antara pengguna (Admin) dengan subsistem Tambah_Data dan Hitung_Penjualan.
 
@@ -102,7 +103,8 @@ Mediator Pattern adalah pola desain yang digunakan untuk mengelola komunikasi an
 - Memusatkan logika komunikasi dalam satu mediator, mempermudah pemeliharaan kode.
 
 ## 🏗️ Struktur Kelas (Class Diagram) Mediator Pattern
-![mediatorclass](https://github.com/user-attachments/assets/5ccb8473-a0ff-4861-a6fd-db7abc489ec3)
+![mediator](https://github.com/user-attachments/assets/07caa10f-822a-417a-84aa-94c06e138684)
+
 
 
 - 🔹 `Mediator` (Interface): Mendefinisikan metode tambah_penjualan() dan tampilkan_penjualan() yang harus diimplementasikan setiap mediator konkret.
