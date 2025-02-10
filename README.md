@@ -12,22 +12,22 @@ Dengan ini:
 - Memudahkan akses data ke daftar penjualan tanpa harus membuat banyak objek.
 
 ## 🏗️ Struktur Kelas (Class Diagram) Singleton Pattern
-![classSingleton](https://github.com/user-attachments/assets/71e4941a-155a-474e-902e-39da376273d2)
+![classSingleton](https://github.com/user-attachments/assets/b1015eca-cf58-428a-a082-8c8d3a078bef)
+
 - 🔹 `PendataanPenjualan` → Singleton yang mengelola data handphone yang terjual dan menghitung total penjualan.
 - 🔹 `Handphone` → Superclass dengan atribut umum untuk membuat objek handphone.
 - 🔹 `iPhone`, `Samsung`, `Xiaomi` → Subclass Handphone dengan atribut khusus.
 
 ## Use Case Diagram
-![use case](https://github.com/user-attachments/assets/4b4efc06-60a4-4a4a-8573-23f2dfae0e86)
+![usecase](https://github.com/user-attachments/assets/1995dc4f-878e-4fdd-ad50-707a5c248ad4)
+
 
 ### **🧍‍♂️Aktor utama:**
 Admin (pengguna sistem)
 
 ### **🗒️Use Case:**
-- Menambahkan data handphone → Admin memasukkan informasi handphone yang terjual.
-- Melihat daftar handphone terjual → Menampilkan daftar semua penjualan handphone yang telah diinput.
-- Melihat total penjualan per merek → Menampilkan total penjualan berdasarkan merek handphone.
-- Melihat total seluruh penjualan → Menghitung jumlah semua penjualan pada tanggal tersebut.
+- Admin dapat memasukkan informasi handphone yang terjual dan melihat semua daftar penjualan handphone yang telah diinput.
+- Melihat  total penjualan berdasarkan merek handphone dan total seluruh penjualan
 
 ## 🔄 Alur Kerja Program (Sequence Diagram) Singleton Pattern
 ![sequenceSingleton](https://github.com/user-attachments/assets/95a1de40-a565-4d8a-93e3-07bdef0ffdd6)
@@ -63,7 +63,8 @@ Dengan menggunakan Facade Pattern:
 -  Kode menjadi lebih terstruktur dan mudah dipahami.
 
 ## 🏗️ Struktur Kelas (Class Diagram) Facade Pattern
-![image](https://github.com/user-attachments/assets/a692c3f6-0cee-4ba5-b14e-ad21d106ce59)
+![facadeClass](https://github.com/user-attachments/assets/ced38177-5665-4300-90a6-c3de3544a719)
+)
 
 - 🔹 Facade Class `Manajemen_Penjualan`
 ➜ Bertindak sebagai antarmuka yang berinteraksi dengan pengguna (Admin), mengakses dan mengelola subsistem Tambah_Data dan Hitung_Penjualan.
@@ -78,7 +79,7 @@ Dengan menggunakan Facade Pattern:
 ➜ Mewakili berbagai jenis handphone yang memiliki spesifikasi unik.
 
 ## Use Case Diagram
-![use case](https://github.com/user-attachments/assets/4b4efc06-60a4-4a4a-8573-23f2dfae0e86)
+![usecase](https://github.com/user-attachments/assets/1995dc4f-878e-4fdd-ad50-707a5c248ad4)
 
 ## 🔄 Alur Kerja Program (Sequence Diagram) Facade Pattern
 ![facadeSequence](https://github.com/user-attachments/assets/f5478a69-dc26-4e50-80c7-f95a9f92f062)
@@ -106,7 +107,6 @@ Mediator Pattern adalah pola desain yang digunakan untuk mengelola komunikasi an
 ![mediator](https://github.com/user-attachments/assets/07caa10f-822a-417a-84aa-94c06e138684)
 
 
-
 - 🔹 `Mediator` (Interface): Mendefinisikan metode tambah_penjualan() dan tampilkan_penjualan() yang harus diimplementasikan setiap mediator konkret.
 
 - 🔹 `TokoMediator` (Concrete Mediator): Mengelola daftar handphone yang terjual dan bertanggung jawab untuk menampilkan daftar handphone dan total penjualan.
@@ -116,7 +116,7 @@ Mediator Pattern adalah pola desain yang digunakan untuk mengelola komunikasi an
 - 🔹 `iPhone`, `Samsung`, `Xiaomi` (Concrete Classes): Subclass dari Handphone yang mewakili berbagai jenis handphone dengan atribut spesifik masing-masing.
 
 ## Use Case Diagram
-![use case](https://github.com/user-attachments/assets/4b4efc06-60a4-4a4a-8573-23f2dfae0e86)
+![usecase](https://github.com/user-attachments/assets/1995dc4f-878e-4fdd-ad50-707a5c248ad4)
 
 ## 🔄 Alur Kerja Program (Sequence Diagram) Mediator Pattern
 ![](https://github.com/user-attachments/assets/011bec1e-80b6-48e6-8a20-d93cbf67ae89)
@@ -137,10 +137,13 @@ Mediator Pattern adalah pola desain yang digunakan untuk mengelola komunikasi an
 12.  Main Program menampilkan daftar penjualan dan total penjualan kepada admin.
 
 ## CLI Apps
+
+Meskipun kita menggunakan design pattern yang berbeda seperti Singleton Pattern, Facade Pattern, atau Mediator Pattern, hasil akhir dari program saat dijalankan akan tetap sama. Hal ini terjadi karena setiap design pattern hanya mengatur bagaimana komponen dalam sistem berinteraksi, bukan mengubah logika bisnis utama dari aplikasi.
+
 ### Inputan Admin:
 ![input](https://github.com/user-attachments/assets/9db8164f-ac71-4da6-8e05-3fb50153b670)
 
 ### Hasil:
 ![hasil](https://github.com/user-attachments/assets/00d9f7c9-604d-4e38-a0eb-cfcfe0f5d091)
 
-Meskipun kita menggunakan design pattern yang berbeda seperti Singleton Pattern, Facade Pattern, atau Mediator Pattern, hasil akhir dari program saat dijalankan akan tetap sama. Hal ini terjadi karena setiap design pattern hanya mengatur bagaimana komponen dalam sistem berinteraksi, bukan mengubah logika bisnis utama dari aplikasi
+
