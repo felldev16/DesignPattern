@@ -30,27 +30,27 @@ Admin (pengguna sistem)
 - Melihat  total penjualan berdasarkan merek handphone dan total seluruh penjualan
 
 ## 🔄 Alur Kerja Program (Sequence Diagram) Singleton Pattern
-![sequenceSingleton](https://github.com/user-attachments/assets/95a1de40-a565-4d8a-93e3-07bdef0ffdd6)
+![sequenceSingleton](https://github.com/user-attachments/assets/0bc37139-091d-4d0d-ad64-e99dcee38f94)
 
 ** 1.  Admin Memasukkan Data**
 
 Admin menginputkan tanggal penjualan handphone.
 Sistem meminta detail handphone (merk, model, harga, dll.).
 
-**2️. Penyimpanan Data ke Singleton**
+**2️. Menyimpanan Data ke Singleton**
 
 Data handphone dikirim ke  `PendataanPenjualan` (Singleton).
-Singleton membuat objek handphone sesuai merek dan menyimpannya dalam daftar tunggal.
+Singleton mengambil objek yang sudah dibuat pada kelas `Handphone` dan menyimpannya dalam daftar tunggal.
 
-**3️. Permintaan & Perhitungan Data**
+**3️. Permintaan & Perhitungan Total Penjualan**
 
 Admin meminta daftar penjualan.
-Singleton menghitung total penjualan per merek dan keseluruhan.
+Singleton menghitung total penjualan per merk dan keseluruhan.
 
 **4️. Menampilkan Laporan**
 
-Sistem mengembalikan daftar handphone dan total penjualan.
-Admin melihat hasil laporan penjualan.
+Program utama menampilkan daftar handphone dan total penjualan.
+Admin dapat melihat hasil laporan penjualan.
 
 
 # Facade Pattern 🎭
@@ -82,12 +82,12 @@ Dengan menggunakan Facade Pattern:
 ![usecase](https://github.com/user-attachments/assets/1995dc4f-878e-4fdd-ad50-707a5c248ad4)
 
 ## 🔄 Alur Kerja Program (Sequence Diagram) Facade Pattern
-![facadeSequence](https://github.com/user-attachments/assets/f5478a69-dc26-4e50-80c7-f95a9f92f062)
+![facadeSequence](https://github.com/user-attachments/assets/02b400f3-d623-4760-881f-f0e5895157c6)
 
 ### **🛠️ Tahapan Proses Sesuai Sequence Diagram**
 1. Admin menjalankan program dan memanggil `mulai_proses()`.
 2. Facade `Manajemen_Penjualan` meminta input data handphone kepada Admin.
-3. Admin memasukkan data, dan sistem `Tambah_Data` membuat objek handphone sesuai mereknya menggunakan subclass `Handphone`.
+3. Admin memasukkan data, dan Facade `Manajemen_Penjualan` memberikan inputan admin ke subsistem `Tambah_Data` dibuatkan objek handphone sesuai merk menggunakan subclass `Handphone`.
 4. Data handphone disimpan ke dalam daftar di sistem `Tambah_Data`
 5. Facade meminta sistem `Hitung_Penjualan` untuk menghitung total penjualan.
 6. Facade menampilkan semua data handphone dan hasil perhitungan ke Admin.
@@ -104,14 +104,14 @@ Mediator Pattern adalah pola desain yang digunakan untuk mengelola komunikasi an
 - Memusatkan logika komunikasi dalam satu mediator, mempermudah pemeliharaan kode.
 
 ## 🏗️ Struktur Kelas (Class Diagram) Mediator Pattern
-![mediator](https://github.com/user-attachments/assets/07caa10f-822a-417a-84aa-94c06e138684)
+![mediator](https://github.com/user-attachments/assets/62d46d64-c1ab-4f1c-9705-8c01e44f87d5)
 
 
 - 🔹 `Mediator` (Interface): Mendefinisikan metode tambah_penjualan() dan tampilkan_penjualan() yang harus diimplementasikan setiap mediator konkret.
 
 - 🔹 `TokoMediator` (Concrete Mediator): Mengelola daftar handphone yang terjual dan bertanggung jawab untuk menampilkan daftar handphone dan total penjualan.
 
-- 🔹 `Handphone` (Abstract Class): Merupakan superclass dari berbagai merek handphone, dengan atribut seperti merk, model, harga, dan metode daftar_terjual() untuk menambahkan data penjualan.
+- 🔹 `Handphone` (Abstract Class): Merupakan superclass dari berbagai merk handphone, dengan atribut seperti merk, model, harga, dan metode daftar_terjual() untuk menambahkan data penjualan.
 
 - 🔹 `iPhone`, `Samsung`, `Xiaomi` (Concrete Classes): Subclass dari Handphone yang mewakili berbagai jenis handphone dengan atribut spesifik masing-masing.
 
@@ -119,7 +119,7 @@ Mediator Pattern adalah pola desain yang digunakan untuk mengelola komunikasi an
 ![usecase](https://github.com/user-attachments/assets/1995dc4f-878e-4fdd-ad50-707a5c248ad4)
 
 ## 🔄 Alur Kerja Program (Sequence Diagram) Mediator Pattern
-![](https://github.com/user-attachments/assets/011bec1e-80b6-48e6-8a20-d93cbf67ae89)
+![sequenceMediator](https://github.com/user-attachments/assets/cec32cea-48dc-445c-8f2b-6304ac75af46)
 
 ### **🔍 Penjelasan Alur Program**
 
