@@ -13,7 +13,7 @@ Dengan ini:
 
 ## 🏗️ Struktur Kelas (Class Diagram) Singleton Pattern
 ![classSingleton](https://github.com/user-attachments/assets/71e4941a-155a-474e-902e-39da376273d2)
-- 🔹 `PendataanPenjualan` → Singleton yang menyimpan semua data handphone yang terjual.
+- 🔹 `PendataanPenjualan` → Singleton yang mengelola data handphone yang terjual dan menghitung total penjualan.
 - 🔹 `Handphone` → Superclass dengan atribut umum untuk membuat objek handphone.
 - 🔹 `iPhone`, `Samsung`, `Xiaomi` → Subclass Handphone dengan atribut khusus.
 
@@ -66,7 +66,7 @@ Dengan menggunakan Facade Pattern:
 ![image](https://github.com/user-attachments/assets/a692c3f6-0cee-4ba5-b14e-ad21d106ce59)
 
 - 🔹 Facade Class `Manajemen_Penjualan`
-➜ Bertindak sebagai penghubung antara pengguna (Admin) dengan subsistem Tambah_Data dan Hitung_Penjualan.
+➜ Bertindak sebagai antarmuka yang berinteraksi dengan pengguna (Admin), mengakses dan mengelola subsistem Tambah_Data dan Hitung_Penjualan.
 
 - 🔹 Subsystem 1 `Tambah_Data`
 ➜ Bertanggung jawab untuk menerima input dan menyimpan data handphone yang terjual.
@@ -86,9 +86,9 @@ Dengan menggunakan Facade Pattern:
 ### **🛠️ Tahapan Proses Sesuai Sequence Diagram**
 1. Admin menjalankan program dan memanggil `mulai_proses()`.
 2. Facade `Manajemen_Penjualan` meminta input data handphone kepada Admin.
-3. Admin memasukkan data, dan sistem membuat objek handphone sesuai mereknya.
-4. Data handphone disimpan ke dalam daftar di `Tambah_Data`
-5. Facade meminta `Hitung_Penjualan` untuk menghitung total penjualan.
+3. Admin memasukkan data, dan sistem `Tambah_Data` membuat objek handphone sesuai mereknya menggunakan subclass `Handphone`.
+4. Data handphone disimpan ke dalam daftar di sistem `Tambah_Data`
+5. Facade meminta sistem `Hitung_Penjualan` untuk menghitung total penjualan.
 6. Facade menampilkan semua data handphone dan hasil perhitungan ke Admin.
 
 # Mediator Pattern 🗣️
@@ -109,7 +109,7 @@ Mediator Pattern adalah pola desain yang digunakan untuk mengelola komunikasi an
 
 - 🔹 `Mediator` (Interface): Mendefinisikan metode tambah_penjualan() dan tampilkan_penjualan() yang harus diimplementasikan setiap mediator konkret.
 
-- 🔹 `TokoMediator` (Concrete Mediator): Mengelola daftar handphone yang terjual dan bertanggung jawab untuk menampilkan data penjualan berdasarkan tanggal.
+- 🔹 `TokoMediator` (Concrete Mediator): Mengelola daftar handphone yang terjual dan bertanggung jawab untuk menampilkan daftar handphone dan total penjualan.
 
 - 🔹 `Handphone` (Abstract Class): Merupakan superclass dari berbagai merek handphone, dengan atribut seperti merk, model, harga, dan metode daftar_terjual() untuk menambahkan data penjualan.
 
