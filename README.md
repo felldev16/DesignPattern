@@ -102,7 +102,8 @@ Mediator Pattern adalah pola desain yang digunakan untuk mengelola komunikasi an
 - Memusatkan logika komunikasi dalam satu mediator, mempermudah pemeliharaan kode.
 
 ## 🏗️ Struktur Kelas (Class Diagram) Mediator Pattern
-![mediatorClass](https://github.com/user-attachments/assets/eb94d72b-ec89-4226-96c7-d1cd3a907f6d)
+![mediatorclass](https://github.com/user-attachments/assets/5ccb8473-a0ff-4861-a6fd-db7abc489ec3)
+
 
 - 🔹 `Mediator` (Interface): Mendefinisikan metode tambah_penjualan() dan tampilkan_penjualan() yang harus diimplementasikan setiap mediator konkret.
 
