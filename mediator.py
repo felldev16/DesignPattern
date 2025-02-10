@@ -37,10 +37,10 @@ class TokoMediator(Mediator):
         print("\n==== Total Semua Penjualan ====")
         print(f"Total keseluruhan penjualan sebesar Rp{total_all:,.2f}")
 
-    # ==== Colleague (Kelas Dasar untuk Objek yang Berkomunikasi) ====
+    # ==== Abstarct Class Colleague (Kelas Dasar untuk Objek yang Berkomunikasi) ====
 class Handphone(ABC):
     def __init__(self, mediator, merk, model, tanggal_jual, harga, jumlah, warna, memori_internal):
-        self.mediator = mediator  # Referensi ke Mediator
+        self.mediator = mediator  # punya akses ke Mediator 
         self.merk = merk
         self.model = model
         self.tanggal_jual = datetime.strptime(tanggal_jual, "%d-%m-%Y")
@@ -54,9 +54,15 @@ class Handphone(ABC):
     def daftar_terjual(self):
         self.mediator.tambah_penjualan(self)
 
-    @abstractmethod
     def tampilkan_info(self):
-        pass
+        print(f"\nMerk: {self.merk}")
+        print(f"Model: {self.model}")
+        print(f"Tanggal Jual: {self.tanggal_jual.strftime('%d-%m-%Y')}")
+        print(f"Harga (satuan): Rp{self.harga:,.2f}")
+        print(f"Jumlah: {self.jumlah} unit")
+        print("Spesifikasi:")
+        for key, value in self.spesifikasi.items():
+            print(f"  - {key}: {value}")
 
     def total_penjualan(self):
         return self.jumlah * self.harga
