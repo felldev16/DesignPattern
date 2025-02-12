@@ -12,7 +12,7 @@ Dengan ini:
 - Memudahkan akses data ke daftar penjualan tanpa harus membuat banyak objek.
 
 ## 🏗️ Struktur Kelas (Class Diagram) Singleton Pattern
-![classSingleton](https://github.com/user-attachments/assets/b1015eca-cf58-428a-a082-8c8d3a078bef)
+![classSingleton](https://github.com/user-attachments/assets/cf6c0da5-ed55-47a4-8785-8f5b74d17868)
 
 - 🔹 `PendataanPenjualan` → Singleton yang mengelola data handphone yang terjual dan menghitung total penjualan.
 - 🔹 `Handphone` → Superclass dengan atribut umum untuk membuat objek handphone.
@@ -63,8 +63,7 @@ Dengan menggunakan Facade Pattern:
 -  Kode menjadi lebih terstruktur dan mudah dipahami.
 
 ## 🏗️ Struktur Kelas (Class Diagram) Facade Pattern
-![facadeClass](https://github.com/user-attachments/assets/ced38177-5665-4300-90a6-c3de3544a719)
-)
+![facadeClass](https://github.com/user-attachments/assets/87ecf892-4bed-4913-b933-b1814f762161)
 
 - 🔹 Facade Class `Manajemen_Penjualan`
 ➜ Bertindak sebagai antarmuka yang berinteraksi dengan pengguna (Admin), mengakses dan mengelola subsistem Tambah_Data dan Hitung_Penjualan.
@@ -104,7 +103,7 @@ Mediator Pattern adalah pola desain yang digunakan untuk mengelola komunikasi an
 - Memusatkan logika komunikasi dalam satu mediator, mempermudah pemeliharaan kode.
 
 ## 🏗️ Struktur Kelas (Class Diagram) Mediator Pattern
-![mediator](https://github.com/user-attachments/assets/62d46d64-c1ab-4f1c-9705-8c01e44f87d5)
+![mediator](https://github.com/user-attachments/assets/33e040b0-41f8-4910-bc99-fa5e6adb320d)
 
 
 - 🔹 `Mediator` (Interface): Mendefinisikan metode tambah_penjualan() dan tampilkan_penjualan() yang harus diimplementasikan setiap mediator konkret.
