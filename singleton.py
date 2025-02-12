@@ -34,7 +34,7 @@ class iPhone(Handphone):
         self.ios_version = ios_version
         self.face_id = face_id
 
-    def tampilkan_info(self):
+    def tampilkan_info_iphone(self):
         super().tampilkan_info()
         print(f"Versi iOS: {self.ios_version}")
         print(f"Face ID: {'Ya' if self.face_id else 'Tidak'}")
@@ -46,7 +46,7 @@ class Samsung(Handphone):
         self.oneUI_version = oneUI_version
         self.s_pen = s_pen
 
-    def tampilkan_info(self):
+    def tampilkan_info_samsung(self):
         super().tampilkan_info()
         print(f"One UI Version: {self.oneUI_version}")
         print(f"S-Pen Support: {'Ya' if self.s_pen else 'Tidak'}")
@@ -58,7 +58,7 @@ class Xiaomi(Handphone):
         self.miUI_version = miUI_version
         self.watt_fastCharge = watt_fastCharge
 
-    def tampilkan_info(self):
+    def tampilkan_info_xiaomi(self):
         super().tampilkan_info()
         print(f"MIUI Version: {self.miUI_version}")
         print(f"Fast Charging (Watt): {self.watt_fastCharge}W")
@@ -68,20 +68,20 @@ class Xiaomi(Handphone):
 class PendataanPenjualan:
     _instance = None  # Menyimpan instance tunggal
 
-    def __new__(cls):
-        if cls._instance is None:
-            cls._instance = super(PendataanPenjualan, cls).__new__(cls)
+    def __new__(cls):   # cls: merujuk ke kelas itu sendiri
+        if cls._instance is None: # jika belum ada objek yang dibuat
+            cls._instance = super(PendataanPenjualan, cls).__new__(cls)  # pakai super() yang merujuk ke kelas singleton
             cls._instance.daftar_hp = [] # Membuat daftar tunggal
         return cls._instance
     
-    @classmethod
+    @classmethod  # mendefinisikan metode ini terkait dengan kelas Singleton, bukan dengan objek
     def get_instance(cls):
-        return cls._instance if cls._instance else cls()
+        return cls._instance if cls._instance else cls() #Jika _instance sudah ada, maka dikembalikan langsung. Jika belum, buat instance baru dengan cls().
 
-    def tambah_hp(self, handphone: Handphone):
+    def tambah_hp(self, handphone: Handphone): # Menambahkan handphone ke daftar
         self.daftar_hp.append(handphone)
 
-    def tampilkan_data_penjualan(self, tanggal_jual: str):  # berisi data penjualan dan total penjualan
+    def tampilkan_data_penjualan(self, tanggal_jual: str):  # berisi metode untuk menampilkan daftar penjualan dan total penjualan
         print(f"\n==== Data Handphone yang Terjual pada {tanggal_jual} ====")
         total_all = 0
         data_terjual = {"iPhone": 0, "Samsung": 0, "Xiaomi": 0}
@@ -112,7 +112,7 @@ def input_user():
 
 # ==== Main Program ====
 if __name__ == "__main__":
-    data_penjualan = PendataanPenjualan.get_instance()  # Mengambil instance dari Singleton
+    data_penjualan = PendataanPenjualan.get_instance()  # Mengambil instance tunggal dari Singleton class
 
     print("DATA PENJUALAN HANDPHONE TOKO ABC")
     print("="*45 + "\n")
@@ -122,7 +122,7 @@ if __name__ == "__main__":
         merk = input("Masukkan jenis handphone (iPhone/Samsung/Xiaomi) atau 'done' untuk selesai: ").lower()
         if merk == "done":
             break
- 
+       
         if merk == "iphone":
             model, harga, jumlah, warna, memori_internal = input_user()
             ios_version = float(input("Versi iOS: "))
