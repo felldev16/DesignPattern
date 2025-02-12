@@ -33,7 +33,7 @@ class iPhone(Handphone):
         self.ios_version = ios_version
         self.face_id = face_id
 
-    def tampilkan_info(self):
+    def tampilkan_info_iphone(self):
         super().tampilkan_info()
         print(f"Versi iOS: {self.ios_version}")
         print(f"Face ID: {'Ya' if self.face_id else 'Tidak'}")
@@ -44,7 +44,7 @@ class Samsung(Handphone):
         self.oneUI_version = oneUI_version
         self.s_pen = s_pen
 
-    def tampilkan_info(self):
+    def tampilkan_info_samsung(self):
         super().tampilkan_info()
         print(f"One UI Version: {self.oneUI_version}")
         print(f"S-Pen Support: {'Ya' if self.s_pen else 'Tidak'}")
@@ -55,7 +55,7 @@ class Xiaomi(Handphone):
         self.miUI_version = miUI_version
         self.watt_fastCharge = watt_fastCharge
 
-    def tampilkan_info(self):
+    def tampilkan_info_xiaomi(self):
         super().tampilkan_info()
         print(f"MIUI Version: {self.miUI_version}")
         print(f"Fast Charging (Watt): {self.watt_fastCharge}W")
